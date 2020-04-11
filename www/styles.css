@@ -14,7 +14,6 @@
 
 body {
   margin: 0;
-  font-size: 10px;
 }
 
 /* Colors */
@@ -55,7 +54,7 @@ body {
   --color: #eaeaaf;
 }
 
-/* Make it look pretty */
+/* Board */
 
 svg {
   display: block;
@@ -64,6 +63,7 @@ svg {
   margin: 30px auto 0 auto;
   border: 2px solid #333;
   padding: 10px;
+  font-size: 10px;
 }
 
 #edges svg|line {
@@ -97,4 +97,23 @@ svg {
 
 #regions svg|rect {
   fill: var(--color);
+}
+
+#regions .occupied svg|text {
+  font-weight: bold;
+}
+
+/* Form */
+
+fieldset {
+  margin: 30px auto;
+  max-width: 80vw;
+}
+
+label {
+  margin: 1em 0;
+}
+
+input[type="url"] {
+  width: 400px;
 }

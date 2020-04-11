@@ -63,6 +63,17 @@ export default function (svgElement, nodes, edges) {
       .attr("x2", e => e.node2.x)
       .attr("y2", e => e.node2.y);
   }
+
+  return gameStatus => {
+    for (const n of nodes) {
+      if (gameStatus[n.name]) {
+        n.allegiance = gameStatus[n.name].currentOwner;
+        n.occupied = gameStatus[n.name].occupied;
+      }
+    }
+
+    nodeNodes.attr("class", n => `${n.allegiance}${n.occupied ? " occupied" : ""}`);
+  };
 }
 
 function computeViewBox(nodes) {

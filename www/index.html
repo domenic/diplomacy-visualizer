@@ -8,3 +8,18 @@
 <script type="module" src="lib/app.mjs"></script>
 
 <svg></svg>
+
+<fieldset>
+  <legend>Load game from webDiplomacy.net</legend>
+
+  <p>
+    <label>
+      Game URL:
+      <input type="url" placeholder="https://webdiplomacy.net/board.php?gameID=...">
+    </label>
+
+    <button id="update">Update board</button>
+  </p>
+
+  <p>Note: currently the URL is ignored and it always uses Domenic's game. I'm working on decoding the pseudo-API.</p>
+</fieldset>
