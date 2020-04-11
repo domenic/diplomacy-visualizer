@@ -1,0 +1,79 @@
+@namespace svg "http://www.w3.org/2000/svg";
+
+/* Resets */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:root {
+  font-family: sans-serif;
+}
+
+body {
+  margin: 0;
+}
+
+/* Colors */
+
+.Neutral {
+  --color: #e2c69e;
+}
+
+.Water {
+  --color: #c5dfea;
+}
+
+.Austria {
+  --color: #c48f85;
+}
+
+.England {
+  --color: #efc4e4;
+}
+
+.France {
+  --color: #79afc6;
+}
+
+.Germany {
+  --color: #a08a75;
+}
+
+.Italy {
+  --color: #a4c499;
+}
+
+.Russia {
+  --color: #a87e9f;
+}
+
+.Turkey {
+  --color: #eaeaaf;
+}
+
+/* Make it look pretty */
+
+#edges .Army {
+  stroke: #973;
+}
+
+#edges .Fleet {
+  stroke: blue;
+}
+
+#edges .Army.Fleet {
+  stroke: #666;
+}
+
+#regions svg|text {
+  text-anchor: middle;
+  dominant-baseline: central;
+  font-size: 12px;
+}
+
+#regions svg|rect {
+  fill: var(--color);
+}

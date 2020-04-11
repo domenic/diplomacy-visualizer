@@ -1,0 +1,87 @@
+[
+  {
+      "adjective": "Austrian",
+      "name": "Austria",
+      "pattern": "Random",
+      "supply_centers": ["Budapest", "Trieste", "Vienna"],
+      "other_home_regions": ["Bohemia", "Galicia", "Tyrolia"],
+      "units": [
+          {"region": "Budapest", "type": "Army"},
+          {"region": "Trieste", "type": "Fleet"},
+          {"region": "Vienna", "type": "Army"}
+      ]
+  },
+  {
+      "adjective": "English",
+      "name": "England",
+      "pattern": "ThinDiag",
+      "supply_centers": ["London", "Liverpool", "Edinburgh"],
+      "other_home_regions": ["Ireland", "Wales", "Yorkshire"],
+      "units": [
+          {"region": "London", "type": "Fleet"},
+          {"region": "Liverpool", "type": "Army"},
+          {"region": "Edinburgh", "type": "Fleet"}
+      ]
+  },
+  {
+      "adjective": "French",
+      "name": "France",
+      "pattern": "Hash",
+      "supply_centers": ["Brest", "Marseilles", "Paris"],
+      "other_home_regions": ["Burgundy", "Gascony", "Picardy"],
+      "units": [
+          {"region": "Brest", "type": "Fleet"},
+          {"region": "Marseilles", "type": "Army"},
+          {"region": "Paris", "type": "Army"}
+      ]
+  },
+  {
+      "adjective": "German",
+      "name": "Germany",
+      "pattern": "Gray",
+      "supply_centers": ["Munich", "Berlin", "Kiel"],
+      "other_home_regions": ["Prussia", "Ruhr", "Silesia"],
+      "units": [
+          {"region": "Munich", "type": "Army"},
+          {"region": "Berlin", "type": "Army"},
+          {"region": "Kiel", "type": "Fleet"}
+      ]
+  },
+  {
+      "adjective": "Italian",
+      "name": "Italy",
+      "pattern": "Quilt",
+      "supply_centers": ["Naples", "Rome", "Venice"],
+      "other_home_regions": ["Apulia", "Piedmont", "Tuscany"],
+      "units": [
+          {"region": "Naples", "type": "Fleet"},
+          {"region": "Rome", "type": "Army"},
+          {"region": "Venice", "type": "Army"}
+      ]
+  },
+  {
+      "adjective": "Russian",
+      "name": "Russia",
+      "pattern": "Sparse",
+      "supply_centers": ["St. Petersburg", "Moscow", "Sevastopol", "Warsaw"],
+      "other_home_regions": ["Livonia", "Ukraine"],
+      "units": [
+          {"coast": "South", "region": "St. Petersburg", "type": "Fleet"},
+          {"region": "Moscow", "type": "Army"},
+          {"region": "Sevastopol", "type": "Fleet"},
+          {"region": "Warsaw", "type": "Army"}
+      ]
+  },
+  {
+      "adjective": "Turkish",
+      "name": "Turkey",
+      "pattern": "Diag",
+      "supply_centers": ["Constantinople", "Ankara", "Smyrna"],
+      "other_home_regions": ["Armenia", "Syria"],
+      "units": [
+          {"region": "Constantinople", "type": "Army"},
+          {"region": "Ankara", "type": "Fleet"},
+          {"region": "Smyrna", "type": "Army"}
+      ]
+  }
+]

@@ -1,0 +1,17 @@
+{
+  "name": "diplomacy-map",
+  "description": "Displays a Diplomacy map",
+  "private": true,
+  "keywords": [],
+  "version": "1.0.0-pre",
+  "author": "Domenic Denicola <d@domenic.me> (https://domenic.me/)",
+  "license": "WTFPL",
+  "scripts": {
+    "lint": "eslint lib"
+  },
+  "dependencies": {
+  },
+  "devDependencies": {
+    "eslint": "^5.16.0"
+  }
+}
