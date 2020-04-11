@@ -31,7 +31,7 @@ export default function (svgElement, nodes, edges) {
     .attr("height", NODE_HEIGHT);
 
   nodeNodes.append("text")
-    .text(n => n.name)
+    .text(nodeText)
     .attr("x", n => nodeWidth(n) / 2)
     .attr("y", NODE_HEIGHT / 2);
 
@@ -93,7 +93,7 @@ function computeViewBox(nodes) {
 }
 
 function nodeWidth(n) {
-  return 10 + n.name.length * 5;
+  return 10 + n.name.length * 5 + (n.supplyCenter ? 15 : 0);
 }
 
 function nodeLeft(n) {
@@ -114,4 +114,8 @@ function nodeBottom(n) {
 
 function nodeTranslate(n) {
   return `translate(${nodeLeft(n)},${nodeTop(n)})`;
+}
+
+function nodeText(n) {
+  return n.name + (n.supplyCenter ? " ⍟" : "");
 }
