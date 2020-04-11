@@ -58,8 +58,10 @@ body {
 /* Make it look pretty */
 
 svg {
-  max-width: 100vw;
-  max-height: 100vh;
+  display: block;
+  max-width: 80vw;
+  max-height: 99vh;
+  margin: 30px auto 0 auto;
 }
 
 #edges svg|line {

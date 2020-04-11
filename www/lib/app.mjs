@@ -11,7 +11,8 @@ async function main() {
   ]);
 
   const { nodes, edges } = makeGraph(boardData, countryData, adjustedPositions);
-  draw(nodes, edges);
+  const svg = document.querySelector("svg");
+  draw(svg, nodes, edges);
 }
 
 function fetchData(relativeURL) {
