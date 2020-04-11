@@ -14,6 +14,7 @@
 
 body {
   margin: 0;
+  font-size: 10px;
 }
 
 /* Colors */
@@ -56,6 +57,15 @@ body {
 
 /* Make it look pretty */
 
+svg {
+  max-width: 100vw;
+  max-height: 100vh;
+}
+
+#edges svg|line {
+  stroke-opacity: 0.6;
+}
+
 #edges .Army {
   stroke: #973;
 }
@@ -71,7 +81,6 @@ body {
 #regions svg|text {
   text-anchor: middle;
   dominant-baseline: central;
-  font-size: 12px;
 }
 
 #regions svg|rect {

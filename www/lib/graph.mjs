@@ -1,23 +1,25 @@
-export default function (boardData, countryData) {
-  const nodes = [];
+export default function (boardData, countryData, adjustedPositions) {
+  const nodeMap = new Map();
   const edgeMap = new Map();
   for (const [regionName, regionData] of Object.entries(boardData)) {
-    nodes.push({
+    nodeMap.set(regionName, {
       name: regionName,
       type: regionData.type,
       supplyCenter: regionData.supply_center,
       allegiance: allegiance(regionName, regionData, countryData),
-      x: regionData.unit_pos[0],
-      y: regionData.unit_pos[1]
+      x: adjustedPositions[regionName]?.x ?? regionData.name_pos[0],
+      y: adjustedPositions[regionName]?.y ?? regionData.name_pos[1]
     });
+  }
 
+  for (const [regionName, regionData] of Object.entries(boardData)) {
     for (const adjacency of regionData.adjacencies) {
       const sorted = [regionName, adjacency.region].sort();
       const mapKey = `${sorted[0]} to ${sorted[1]}`;
       if (!edgeMap.has(mapKey)) {
         edgeMap.set(mapKey, {
-          source: sorted[0],
-          target: sorted[1],
+          node1: nodeMap.get(sorted[0]),
+          node2: nodeMap.get(sorted[1]),
           types: new Set(),
           coasts: new Set()
         });
@@ -31,9 +33,7 @@ export default function (boardData, countryData) {
     }
   }
 
-  const edges = [...edgeMap.values()];
-
-  return { nodes, edges };
+  return { nodes: [...nodeMap.values()], edges: [...edgeMap.values()] };
 }
 
 function allegiance(regionName, regionData, countryData) {

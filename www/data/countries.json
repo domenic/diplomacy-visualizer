@@ -16,7 +16,7 @@
       "name": "England",
       "pattern": "ThinDiag",
       "supply_centers": ["London", "Liverpool", "Edinburgh"],
-      "other_home_regions": ["Ireland", "Wales", "Yorkshire"],
+      "other_home_regions": ["Clyde", "Ireland", "Wales", "Yorkshire"],
       "units": [
           {"region": "London", "type": "Fleet"},
           {"region": "Liverpool", "type": "Army"},

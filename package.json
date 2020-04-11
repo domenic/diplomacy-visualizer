@@ -7,11 +7,12 @@
   "author": "Domenic Denicola <d@domenic.me> (https://domenic.me/)",
   "license": "WTFPL",
   "scripts": {
-    "lint": "eslint lib"
+    "lint": "eslint lib",
+    "start": "ecstatic www"
   },
-  "dependencies": {
-  },
+  "dependencies": {},
   "devDependencies": {
-    "eslint": "^5.16.0"
+    "ecstatic": "^4.1.4",
+    "eslint": "^6.8.0"
   }
 }

@@ -2,10 +2,12 @@
 root: true
 env:
   es6: true
-  node: true
+  browser: true
 parserOptions:
-  ecmaVersion: 2018
+  ecmaVersion: 2020
   sourceType: module
+globals:
+  d3: readonly
 
 rules:
   # Possible errors
