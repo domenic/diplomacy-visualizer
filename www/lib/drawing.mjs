@@ -21,7 +21,10 @@ export default function (svgElement, nodes, edges) {
     .join("g")
     .attr("class", n => n.allegiance)
     .attr("transform", nodeTranslate)
-    .call(d3.drag().on("drag", onDrag));
+    .call(d3.drag()
+      .on("start", (n, i, els) => els[i].classList.add("dragging"))
+      .on("drag", onDrag)
+      .on("end", (n, i, els) => els[i].classList.remove("dragging")));
 
   nodeNodes.append("rect")
     .attr("width", nodeWidth)
@@ -34,11 +37,11 @@ export default function (svgElement, nodes, edges) {
 
   svg.attr("viewBox", viewBox(nodes));
 
-  function onDrag(n) {
+  function onDrag(n, i, els) {
     n.x += d3.event.dx;
     n.y += d3.event.dy;
 
-    d3.select(this).attr("transform", nodeTranslate(n));
+    els[i].setAttribute("transform", nodeTranslate(n));
 
     edgeNodes
       .attr("x1", e => e.node1.x)

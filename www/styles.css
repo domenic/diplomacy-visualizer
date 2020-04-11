@@ -80,6 +80,14 @@ svg {
   stroke: #666;
 }
 
+#regions svg|g {
+  cursor: grab;
+}
+
+#regions svg|g.dragging {
+  cursor: grabbing;
+}
+
 #regions svg|text {
   text-anchor: middle;
   dominant-baseline: central;
