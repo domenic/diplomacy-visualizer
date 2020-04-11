@@ -60,8 +60,10 @@ body {
 svg {
   display: block;
   max-width: 80vw;
-  max-height: 99vh;
+  max-height: 94vh;
   margin: 30px auto 0 auto;
+  border: 2px solid #333;
+  padding: 10px;
 }
 
 #edges svg|line {

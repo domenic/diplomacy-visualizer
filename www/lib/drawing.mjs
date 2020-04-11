@@ -35,11 +35,25 @@ export default function (svgElement, nodes, edges) {
     .attr("x", n => nodeWidth(n) / 2)
     .attr("y", NODE_HEIGHT / 2);
 
-  svg.attr("viewBox", viewBox(nodes));
+  const viewBox = computeViewBox(nodes);
+  svg.attr("viewBox", `${viewBox.left} ${viewBox.top} ${viewBox.width} ${viewBox.height}`);
 
   function onDrag(n, i, els) {
     n.x += d3.event.dx;
     n.y += d3.event.dy;
+
+    if (nodeLeft(n) < viewBox.left) {
+      n.x = viewBox.left + nodeWidth(n) / 2;
+    }
+    if (nodeRight(n) > viewBox.right) {
+      n.x = viewBox.right - nodeWidth(n) / 2;
+    }
+    if (nodeTop(n) < viewBox.top) {
+      n.y = viewBox.top + NODE_HEIGHT / 2;
+    }
+    if (nodeBottom(n) > viewBox.bottom) {
+      n.y = viewBox.bottom - NODE_HEIGHT / 2;
+    }
 
     els[i].setAttribute("transform", nodeTranslate(n));
 
@@ -51,7 +65,7 @@ export default function (svgElement, nodes, edges) {
   }
 }
 
-function viewBox(nodes) {
+function computeViewBox(nodes) {
   let left = Infinity;
   let top = Infinity;
   let right = -Infinity;
@@ -64,7 +78,7 @@ function viewBox(nodes) {
     bottom = Math.max(nodeBottom(n), bottom);
   }
 
-  return [left, top, right - left, bottom - top].join(" ");
+  return { left, top, right, bottom, width: right - left, height: bottom - top };
 }
 
 function nodeWidth(n) {
